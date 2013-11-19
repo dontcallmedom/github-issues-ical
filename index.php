@@ -11,6 +11,7 @@ $issues = json_decode($client->getHttpClient()->get('issues')->getBody(true));
 function toIcalDate($date) {
   return str_replace(array('-',':'), '', $date);
 }
+header("Content-Type: text/calendar");
 
 echo("BEGIN:VCALENDAR\r\n");
 echo("VERSION:2.0\r\n");
